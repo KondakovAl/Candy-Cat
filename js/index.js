@@ -251,6 +251,34 @@ function init() {
   }
 }
 
+// burger
+
+const burgerMenuButton = document.querySelector('.burger-menu__button');
+const burgerMenu = document.querySelector('.mobile-menu');
+const overlay = document.querySelector('.overlay');
+
+const mobileLinks = document.querySelectorAll('.mobile-menu__links-item');
+
+burgerMenuButton.addEventListener('click', () => {
+  document.body.classList.toggle('--lock');
+  burgerMenuButton.classList.toggle('--active');
+  burgerMenu.classList.toggle('--active');
+});
+
+overlay.addEventListener('click', () => {
+  document.body.classList.remove('--lock');
+  burgerMenuButton.classList.remove('--active');
+  burgerMenu.classList.remove('--active');
+});
+
+for (let i = 0; i < mobileLinks.length; i++) {
+  mobileLinks[i].addEventListener('click', () => {
+    document.body.classList.remove('--lock');
+    burgerMenuButton.classList.remove('--active');
+    burgerMenu.classList.remove('--active');
+  });
+}
+
 // tabs
 const tabs = document.querySelector('.tabs');
 const tabButton = document.querySelectorAll('.tabs__button');
