@@ -122,16 +122,10 @@ const menu = document.querySelector('.menu');
 ymaps.ready(init);
 
 function init() {
-  let map = new ymaps.Map(
-    'map',
-    {
-      center: centerOffice,
-      zoom: DEFAULT_ZOOM,
-    },
-    {
-      searchControlProvider: 'yandex#search',
-    }
-  );
+  let map = new ymaps.Map('map', {
+    center: centerOffice,
+    zoom: DEFAULT_ZOOM,
+  });
 
   map.controls.remove('geolocationControl');
   map.controls.remove('searchControl');
@@ -240,7 +234,6 @@ function init() {
 
     menuItem[i].onclick = function () {
       currentMark = pos;
-      console.log(currentMark);
 
       menuItem.forEach((item) => {
         item.classList.remove('--active');

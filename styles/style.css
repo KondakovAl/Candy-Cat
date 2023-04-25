@@ -72,7 +72,8 @@ select {
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: all 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out,
+    border 0.25s ease-in-out;
 }
 
 .button_primary {
@@ -575,7 +576,7 @@ select {
 }
 
 .accordion__answer p {
-  width: 80%;
+  width: 85%;
   text-align: justify;
 }
 
@@ -686,6 +687,7 @@ select {
   margin-bottom: 10px;
   cursor: pointer;
   transition: border 0.3s ease-in;
+  min-height: 270px;
 }
 
 .menu__item.--active {
@@ -694,6 +696,10 @@ select {
 
 .menu__text {
   text-align: start;
+}
+
+.menu__text:last-child {
+  margin-top: auto;
 }
 
 .menu__text span {
