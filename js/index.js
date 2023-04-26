@@ -207,7 +207,7 @@ function init() {
         menuItem[item.id - 1].classList.add('--active');
         menuItem[item.id - 1].scrollIntoView({
           block: 'nearest',
-          inline: 'start',
+          inline: 'center',
           behavior: 'smooth',
         });
       }
@@ -251,8 +251,36 @@ function init() {
   }
 }
 
-// burger
+// modal
+const modal = document.querySelector('.modal');
+const modalButton = document.querySelector('.modal-top__close');
+const policy = document.querySelectorAll('.policy');
+const modalContent = document.querySelector('.modal__content');
 
+for (let i = 0; i < policy.length; i++) {
+  policy[i].addEventListener('click', () => {
+    document.body.classList.add('--lock');
+    modal.classList.add('--active');
+  });
+}
+
+modalButton.addEventListener('click', () => {
+  document.body.classList.remove('--lock');
+  modal.classList.remove('--active');
+});
+
+window.onload = function () {
+  modalContent.addEventListener('click', function (e) {
+    e.stopPropagation();
+  });
+};
+
+modal.addEventListener('click', () => {
+  document.body.classList.remove('--lock');
+  modal.classList.remove('--active');
+});
+
+// burger
 const burgerMenuButton = document.querySelector('.burger-menu__button');
 const burgerMenu = document.querySelector('.mobile-menu');
 const overlay = document.querySelector('.overlay');
@@ -273,9 +301,13 @@ overlay.addEventListener('click', () => {
 
 for (let i = 0; i < mobileLinks.length; i++) {
   mobileLinks[i].addEventListener('click', () => {
-    document.body.classList.remove('--lock');
     burgerMenuButton.classList.remove('--active');
     burgerMenu.classList.remove('--active');
+    console.log(mobileLinks);
+
+    if (i !== mobileLinks.length - 1) {
+      document.body.classList.remove('--lock');
+    }
   });
 }
 
