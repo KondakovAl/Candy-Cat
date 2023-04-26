@@ -111,7 +111,6 @@ select {
   font-weight: 400;
   background: var(--light);
   position: relative;
-  background-color: aqua;
   overflow-x: hidden;
 }
 
