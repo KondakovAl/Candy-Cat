@@ -145,6 +145,8 @@ function init() {
     return true;
   }
 
+  map.behaviors.disable('drag');
+
   // Рендерим разметку
   const groupsToRender = groups
     .map(
@@ -241,6 +243,11 @@ function init() {
 
       if (arraysEqual(pos, currentMark)) {
         menuItem[i].classList.add('--active');
+        menuItem[i].scrollIntoView({
+          block: 'nearest',
+          inline: 'center',
+          behavior: 'smooth',
+        });
       }
       map
         .panTo(pos, { flying: 1 })
