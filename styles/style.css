@@ -676,7 +676,7 @@ body.--lock {
 }
 
 .tabs__nav button {
-  margin-right: 40px;
+  margin-right: 20px;
 }
 
 .tabs__nav button:last-child {
@@ -1218,7 +1218,7 @@ body.--lock {
   }
 
   .howto__steps {
-    width: 590px;
+    width: 614px;
   }
 
   .step__number span {
